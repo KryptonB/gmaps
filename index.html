@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Google Map Prototype</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/fonts/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<div>
+				<br />
+				<br />
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4 col-sm-12 col-xs-12">
+			<form class="form-inline" id="" action="">
+				<div class="form-group">
+					<label>My Current Location:</label>
+					<input type="search" class="form-control" id="myCurrentLocation" name="myCurrentLocation">
+				</div>				
+			</form>
+		</div>
+		<div class="col-md-4 col-sm-12 col-xs-12">			
+			<form class="form-inline" id="" action="">
+				<div class="form-group">
+					<!-- <label>Coors:</label> -->
+					<div class="input-group">
+					
+						<input type="search" class="form-control" id="coordinates" name="coordinates" placeholder="Latitude, Longitude">
+						<span class="input-group-btn">
+							<button class="btn btn-primary" type="button" id="showLocationButton" name="">Show Location</button>
+						</span>
+					</div>
+				</div>
+			</form>
+		</div>	
+		<div class="col-md-4 col-sm-12 col-xs-12" align="center">					
+			<button type="button" class="btn btn-success">Add to Database</button>					
+			<button type="button" class="btn btn-success">Set As Favorite</button>			
+			<button type="button" onclick="initMap()" class="btn btn-success">Reload</button>		
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-8 col-sm-12 col-xs-12">	
+			<input id="searchInput" class="controls" type="search" placeholder="Search location">
+			<div id="map" class="well well-sm"></div>
+		</div>
+		<div class="col-md-4 col-sm-12 col-xs-12">
+			<form>
+				<!-- <div class="checkbox">
+					<label><input type="checkbox"> Remember me</label>
+				</div> -->			  
+				<div class="form-group">
+					<div class="panel panel-success">
+						<div class="panel-heading">
+							Best Path Between Selected Locations
+						</div>
+						<div class="panel-body">
+							<div class="col-md-6 col-sm-6 col-xs-6">
+								<select id="mode" class="form-control chosenSelect">
+									<option value="DRIVING" selected>Driving</option>
+									<option value="WALKING">Walking</option>
+									<option value="BICYCLING">Bicycling</option>
+									<option value="TRANSIT">Transit</option>
+								</select>
+							</div>
+							<div class="col-md-6 col-sm-6 col-xs-6">
+								<button type="button" class="btn btn-primary" id="showRouteButton">Show Route</button> 
+							</div>					
+						</div>
+					</div>
+					<div class="panel panel-success">
+						<div class="panel-heading">
+							Route Details<a href="#routeDetails" data-toggle="collapse" class="pull-right">Show / Hide</a>						
+						</div>
+						<div class="panel-body collapse in" id="routeDetails"></div>
+					</div>
+					<hr>
+				</div>			  
+				<div class="form-group">
+					<label for="email">Enter Location:</label>
+					<div class="input-group">					
+						<input type="search" class="form-control" id="loc" name="loc" placeholder="Search here...">
+						<span class="input-group-btn">
+							<button class="btn btn-primary" type="button" id="locButton" name="locButton">Get Details</button>
+						</span>
+					</div>
+				</div>
+				<div class="form-group" id="">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							Details
+						</div>
+						<div class="panel-body" id="locationDetails"></div>
+					</div>
+				</div>
+				<hr>
+				<!-- <div class="form-group">
+				  <div class="panel panel-primary">
+					<div class="panel-heading">
+						<strong>Route Details</strong>
+					</div>
+					<div class="panel-body">
+						<button type="button" class="btn btn-success" id="showRouteButton">Show Route</button>
+						<button type="button" class="btn btn-default" id="showDetailsButton">Show Details</button>
+					</div>
+				  </div>
+				</div> -->
+			</form>		
+		</div>
+	</div>	
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Chosen files for select boxes -->
+<script src="plugins/chosen/chosen.jquery.js"></script>
+<link rel="stylesheet" href="plugins/chosen/chosen.css" />
+
+<script src="js/custom.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeMkNHXitD6DRFYAT9t0pdeGqy19N4o_E&libraries=places&callback=initMap"></script>
+</body>
+</html>
