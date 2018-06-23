@@ -1,0 +1,130 @@
+/* Always set the map height explicitly to define the size of the div
+	   * element that contains the map. */
+#map {
+	height: 600px;
+	border: 1px solid #000;		
+}
+
+/* Optional: Makes the sample page fill the window. */
+html, body {
+	height: 100%;
+	margin: 10;
+	padding: 10;
+}
+
+/* .container {
+	margin-right: 10px;
+	margin-left: 10px;
+	width: 1327px;
+}
+ */
+/* === Styling for google maps autocomplete search box === */
+.controls {
+	background-color: #fff;
+	border-radius: 2px;
+	border: 1px solid transparent;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+	box-sizing: border-box;
+	font-family: Roboto;
+	font-size: 15px;
+	font-weight: 300;
+	height: 29px;
+	margin-left: 17px;
+	margin-top: 10px;
+	outline: none;
+	padding: 0 11px 0 13px;
+	text-overflow: ellipsis;
+	width: 400px;
+}
+
+.controls:focus {
+	border-color: #4d90fe;
+}
+
+/* Fix for autocomplete hidden issue in full screen mode in chrome*/
+.pac-container, .pac-item {
+	z-index: 2147483647 !important;
+}
+/* === END Styling for google maps autocomplete search box === */
+
+.title {
+	font-weight: bold;
+}
+
+.infoWindowTextBold {
+	font-weight: bold;  
+}
+
+/* === Styles for different colored fonts === */
+.orange {
+	color: #f89117;
+}
+
+.darkGrey {
+	color: #525c6e;
+}
+
+.lightBlue {
+	color: #64b1bc;
+}
+
+.red {
+	color: #ff3333;
+}
+
+.lightPale {
+	color: #e5e1ac;
+}
+/*  === END Styles for different colored fonts === */
+
+.spacer {
+	padding: 0 20px 0 20px;
+}
+
+.spacer2 {
+	padding: 0 15px 0 15px;
+}
+
+.bottomSpacer {
+	margin-bottom: 20px;
+}
+
+hr.custom {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.usageheader {
+	font-weight: bold;
+	color: #fff;
+}
+
+
+#infowindow-content {
+	display: none;
+}
+
+#map #infowindow-content {
+	display: inline;
+}
+
+/* To fix text box close button not being shown in chrome
+   This fix is not required for non-webkit browsers like IE */
+	input[type=search]::-webkit-search-cancel-button {
+	-webkit-appearance: searchfield-cancel-button;
+}
+
+/* To left align tooltip text */
+.tooltip > .tooltip-inner {
+	text-align: left;
+}
+/* 
+#routeDetails {
+	height: 200px;
+} */
+
+#routeDetails {
+  /* min-height: 10; */
+  max-height: 242px;
+  overflow-y: scroll;
+}
